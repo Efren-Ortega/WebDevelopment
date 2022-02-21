@@ -8,22 +8,34 @@ body{
   box-sizing: border-box;
 }
 
+/* This will contain all the "Login" */
 .container{
-  display: flex;
+  display: flex;/*I used flexbox to center all my Login elements*/
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: auto;
+
+  /* as hight I used relative units 100vh because I needed to cover all viewport*/
+  height: 100vh; /****/
+  /* margin: auto; */
+  border:1px solid black;
 }
 
+/* This is a div that contains all the elements of my login */
 .login{
   background-color: white;
-  height: 55%;
   width: 80%;
   border-radius: 20px;
-  display: flex;
+  padding: 40px 0 75px 0;
 }
 
+
+/* //////////////////////////////////////////////////////////////////////////// */
+
+/* I did two divs that represent two columns, that left column is to show a
+image(.img) and the second div is to show the login form(.form) */
+
+/* For the left div(.img) I added a display property as none because I designed
+movil first, so for movil I didn't need show an imagen*/
 .img{
   display: none;
   text-align:center;
@@ -31,38 +43,76 @@ body{
 }
 
 .form{
-  padding: 25px;
-  width: 100%;
-  font-family:'Roboto Slab';
+  padding: 25px;/*I added a padding to expand the height of div*/
+  width: 100%;/*For mobile I needed to cover all container*/
   text-align: center;
 }
 
-.form label{
+.form h2{
+  font-family:'Open Sans';
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.form label{ /*The label tags are inline so I added a display property to change that*/
   display: block;
   text-align: left;
   font-family:'Roboto';
 }
 
-span{
+label span{
   color: red;
 }
 
+/*Now the inputs I just added some simple styles*/
 .form input{
   width: 100%;
   margin-bottom: 20px;
+  box-shadow:0px 3px 5px #D3D2D3;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #D3D2D3;
 }
 
+/*I used a selector, this selector allows me to select only the fisrt paragraph
+and I set some styles */
+input + p{
+  width: 100%;
+  text-align: right;
+  font-size: 12px;
+  font-family: 'Roboto';
+  margin: -10px 0 40px 0;
+}
+
+a{
+  text-decoration:none;
+  color:#3197D6;
+}
+
+a:hover{
+  color:#0170B9;
+}
+
+/* I also added some styles for the button */
 .form button{
   color:white;
-  padding: 7px 40px;
+  padding: 10px 50px;
   background-color: #0170B9;
   border: none;
+  font-size: 15px;
+  font-weight: bolder;
 }
 
+/* I used Pseudo-classes for the button */
 .form button:hover{
   cursor: pointer;
 }
 
+.form button:active{
+  background-color:#3197D6;
+}
+
+/* Finally I added a Footer to my website */
 footer{
   text-align: center;
   background-color: #0170B9;

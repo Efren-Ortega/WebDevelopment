@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles/styles.css">
     <meta name="viewport" content="width = device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
     <title></title>
   </head>
   <body>
@@ -17,14 +17,15 @@
 
         <div class="form">
           <h2>Log In</h2>
+          <form class="" method="post">
+            <label for="inID">ID <span>*</span></label>
+            <input id="inID" type="text" name="ID" required>
 
-          <label for="inID">ID <span>*</span></label>
-          <input id="inID" type="text" name="ID">
-
-          <label for="inPass">Password <span>*</span></label>
-          <input id="inPass" type="password" name="password">
-
-          <button type="button" name="Enter">Log In</button>
+            <label for="inPass">Password <span>*</span></label>
+            <input id="inPass" type="password" name="password" required>
+            <p><a href="#">Forgot your password?</a></p>
+            <button type="submit" name="Enter">LOG IN</button>
+          </form>
         </div>
 
       </div>
@@ -33,6 +34,6 @@
     <footer>
       <p>Created by J.O</p>
     </footer>
-    
+
   </body>
 </html>
