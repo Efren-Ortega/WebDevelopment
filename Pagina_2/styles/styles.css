@@ -1,7 +1,12 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #3096D6;
+
+  /* Now I added these properties for the body so that I can display the
+  div(.container) in whole page for all devices without overflowing*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 *{
@@ -10,12 +15,15 @@ body{
 
 /* This will contain all the "Login" */
 .container{
+  flex-grow: 1; /*I used it to specifies how much the item will grow
+  relative to the rest of the flexible items inside the same container in This
+  case I only have two child containers of body (.container and Footer)*/
+
   display: flex;/*I used flexbox to center all my Login elements*/
   justify-content: center;
   align-items: center;
 
-  /* as hight I used relative units 100vh because I needed to cover all viewport*/
-  height: 100vh; /****/
+  background-color: #3096D6;
 }
 
 /* This is a div that contains all the elements of my login */
@@ -24,6 +32,7 @@ body{
   width: 80%;
   border-radius: 20px;
   padding: 40px 0 75px 0;
+  margin: 5%;
 }
 
 
@@ -87,7 +96,7 @@ input + p{
 /*I added icons to my inputs*/
 i{
   position: absolute;
-  padding: 11px 0px 0px 10px;
+  padding: 16px 0px 0px 10px;
   color:#575757;
 }
 
@@ -146,7 +155,7 @@ footer{
 
   .form{
     width: 50%;
-    padding: 10px 90px 0px 90px;
+    padding: 10px 30px 0px 30px;
     text-align: center;
   }
 
@@ -161,5 +170,6 @@ footer{
     padding: 10px 75px;
     margin-top: 10px;
   }
-
 }
+
+/* THE END */
