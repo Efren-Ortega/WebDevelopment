@@ -22,7 +22,6 @@ a{
   margin: 10px;
   line-height: 1.2;
   color:black;
-
 }
 
 h2{
@@ -46,28 +45,26 @@ li{
 
 p{
   font-size: 20px;
-  /* margin: 10px; */
 }
 
 .container{
   margin: auto; /*Center the .container*/
   max-width: 1200px;
-  overflow: visible;
 }
 
+/*///////////Styles to the Navigation Bar////////////////////////////////////*/
 .navbar{
   background-color:purple;
-  height: 70px;
-  padding: 0 30px;
+  height: 100px;
 }
 
 .navbar h1{
   font-size:30px;
   font-weight:300;
   margin: 10px;
-  line-height: 1.2
 }
 
+/*To display "Log In & Check Courses" inline with the Navigation bar title*/
 .navbar .flex{
   display: flex;
   justify-content: space-between;
@@ -75,10 +72,12 @@ p{
   height: 100%;
 }
 
+/*To display "Log In & Check Courses" side by side */
 .navbar ul{
   display: flex;
 }
 
+/*Give styles to the "Log In & Check Courses" */
 .navbar a{
   color: white;
   padding: 9px;
@@ -90,6 +89,7 @@ p{
   border-bottom:3px solid #9867C5;
 }
 
+/*/////Now give styles to the ShowCase of the website//////////////////////*/
 .showcase{
   height: 300px;
   background-color: purple;
@@ -108,17 +108,23 @@ p{
   padding-left: 7px;
 }
 
-.grid{
+/*We implements grid*/
+.container .grid{
   overflow: visible;
   display: grid;
-  grid-template-columns:60% 40%;
+  grid-template-columns:60% 40%;/*I set 2 columns with these sizes
+  the first column displays the form y the other displays the imagen*/
 }
 
+/*I used attribute selector to select the 2 columns of the ShowCase and
+give 'em styles*/
 [class*="item-"]{
   position: relative;
   top:50px;
 }
 
+/*I used other attribute selector to select the input of the form y give it
+styles*/
 .showcase input[type="email"]{
   padding: 10px 70px 10px;
   font-size: 14px;
@@ -127,6 +133,7 @@ p{
   padding-left: 6px;
 }
 
+/*I gave styles the bottom*/
 .showcase .btn{
   border-radius: 6px;
   background:#9867C5;
@@ -146,6 +153,8 @@ p{
 
 
 /* ///////////////////////////////////////////////////////////////////////// */
+/*Now, I gave styles to the lower section of the website this section displays
+info the page */
 
 .lower-container{
   position: relative;
@@ -167,6 +176,7 @@ p{
   text-align: justify;
 }
 
+/*To display the three .stat in columns*/
 .flex{
   display: flex;
   justify-content: space-around;
@@ -182,6 +192,7 @@ p{
   width: 800px;
 }
 
+/*I gave style the icons*/
 .stat .fa{
   color: purple
 }
@@ -190,6 +201,10 @@ p{
   font-size: 15px;
 }
 
+
+/*///////////////////////////////////////////////////////////////////////////*/
+
+/*This is other section this section show testimonials*/
 .testimonial{
   color: black;
   padding: 40px;
@@ -199,12 +214,15 @@ p{
   text-align: center;
 }
 
+/*Again I implement grid*/
 .grid-3{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap:40px;
+  grid-template-columns: 1fr 1fr 1fr; /*Now I set the size of the three columns
+  each column display one testimonial*/
+  gap:40px; /*I separete each column*/
 }
 
+/*I added styles the each card(testimonial)*/
 .card{
   padding: 10px;
   background-color: white;
@@ -218,6 +236,7 @@ p{
   font-size: 17px;
 }
 
+/*This is to make a circle imagen with a border*/
 .circle{
   height:90px;
   width:90px;
@@ -233,6 +252,9 @@ p{
 .lower-container{
   margin-bottom: 100px;
 }
+
+
+/*////////////////////////////////////////////////////////////////////////*/
 
 footer{
   background: purple;
@@ -259,4 +281,109 @@ footer a:hover{
 
 .profiles{
   text-align: center;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/*I added media to make responsive website*/
+
+/* Tablets */
+@media(max-width: 778px) {
+  .grid, .container .grid-3{
+    grid-template-columns: 1fr;
+  }
+
+  footer .grid-3{
+    grid-template-columns: 30% 20% 40%;
+  }
+
+  .showcase {
+      height: auto;
+      text-align: center;
+    }
+
+  .imagen {
+      width: 500px;
+      margin: auto;
+    }
+
+  .stats .flex {
+      flex-direction: column;
+      align-items: center;
+    }
+
+  .stats {
+    text-align: center;
+  }
+
+  .stat {
+      width: 100%;
+      padding: 0;
+    }
+
+  .stat .title{
+    text-align: center;
+  }
+}
+
+
+/*Mobiles*/
+@media(max-width: 620px) {
+
+  .showcase .container .grid{
+    grid-template-columns: 1fr; /*To make the first column of the showcase cover
+    entire space*/
+  }
+
+  .navbar {
+    height: 100px;
+  }
+
+  .navbar .flex { /*To display the Navigation bar in column*/
+    flex-direction: column;
+  }
+
+  .navbar a:hover {
+    color: white;
+    border-bottom: 2px solid black;
+  }
+
+  .navbar ul li {
+    background: #9867C5;
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-left: 10px;
+  }
+
+  .showcase {
+    height: 330px;
+    text-align: center;
+    margin-bottom: -50px;
+  }
+
+  .little-info {
+      font-size: 13px;
+    }
+
+  .imagen {
+    display: none;
+  }
+
+  .btn{
+    margin-top: 10px;
+  }
+
+  .stat{
+    width: 100%;
+    padding: 0px;
+  }
+
+  .stat .title{
+    text-align: center;
+  }
+
+
+  footer .grid-3{
+    grid-template-columns: 1fr;
+  }
 }
